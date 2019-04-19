@@ -1,0 +1,38 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.row {
+  display: flex;
+  justify-content: flex-start;
+}
+li {
+  padding: 5px 10px;
+  list-style: none;
+}
+.markdown,
+.main {
+  margin: 0 auto;
+}
+body {
+  background: black;
+  color: white;
+  font-size: 18px;
+}
+.title,
+h1 {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #a5782a;
+  font-weight: bold;
+}
+@media screen and (max-width: 600px) {
+  width: 100%;
+}
+
+
+/*# sourceMappingURL=/src.e31bb0bc.css.map */
