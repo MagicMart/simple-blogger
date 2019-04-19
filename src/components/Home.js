@@ -2,23 +2,7 @@ import React from "react";
 import { Route, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown/with-html";
 
-const markdown = [
-    {
-        pathname: "hello-world",
-        title: "Hello World",
-        module: import("./articles/hello-world.md")
-    },
-    {
-        pathname: "the-days-are-too-short",
-        title: "The days are too short",
-        module: import("./articles/the-days-are-too-short.md")
-    },
-    {
-        pathname: "where-is-hell",
-        title: "Where is hell?",
-        module: import("./articles/where-is-hell.md")
-    }
-];
+import markdown from "./articles/markdown";
 
 /**
  * @param {{ children: React.ReactNode; }} props
