@@ -2,16 +2,23 @@ import React from "react";
 import { Route, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown/with-html";
 
-const markdown = {
-    "hello-world": ["Hello World", import("./articles/article.md")],
-    "The-days-are-long": [
-        "These days are long",
-        import("./articles/article.1.md")
-    ],
-    "Where-is-Hell": ["Where is Hell?", import("./articles/article.2.md")]
-};
-const keyArray = Array.from(Object.keys(markdown));
-const articleTitles = keyArray.map(key => markdown[key][0]);
+const markdown = [
+    {
+        pathname: "hello-world",
+        title: "Hello World",
+        module: import("./articles/hello-world.md")
+    },
+    {
+        pathname: "the-days-are-too-short",
+        title: "The days are too short",
+        module: import("./articles/the-days-are-too-short.md")
+    },
+    {
+        pathname: "where-is-hell",
+        title: "Where is hell?",
+        module: import("./articles/where-is-hell.md")
+    }
+];
 
 /**
  * @param {{ children: React.ReactNode; }} props
@@ -40,7 +47,7 @@ class Home extends React.Component {
             this.setState({ post: null });
         } else {
             const str = pathname.replace("/", "");
-            const stuff = markdown[str][1];
+            const stuff = markdown.find(obj => obj.pathname === str).module;
             stuff &&
                 stuff.then(markdown =>
                     this.setState(() => ({
@@ -54,10 +61,10 @@ class Home extends React.Component {
         return (
             <main className="main">
                 {this.state.post === null ? (
-                    articleTitles.map((title, i) => (
-                        <p key={title}>
-                            <Link className="title" to={keyArray[i]}>
-                                {title}
+                    markdown.map(obj => (
+                        <p key={obj.title}>
+                            <Link className="title" to={obj.pathname}>
+                                {obj.title}
                             </Link>
                         </p>
                     ))

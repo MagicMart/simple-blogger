@@ -42916,15 +42916,19 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var markdown = {
-  "hello-world": ["Hello World", require("_bundle_loader")(require.resolve("./articles/article.md"))],
-  "The-days-are-long": ["These days are long", require("_bundle_loader")(require.resolve("./articles/article.1.md"))],
-  "Where-is-Hell": ["Where is Hell?", require("_bundle_loader")(require.resolve("./articles/article.2.md"))]
-};
-var keyArray = Array.from(Object.keys(markdown));
-var articleTitles = keyArray.map(function (key) {
-  return markdown[key][0];
-});
+var markdown = [{
+  pathname: "hello-world",
+  title: "Hello World",
+  module: require("_bundle_loader")(require.resolve("./articles/hello-world.md"))
+}, {
+  pathname: "the-days-are-too-short",
+  title: "The days are too short",
+  module: require("_bundle_loader")(require.resolve("./articles/the-days-are-too-short.md"))
+}, {
+  pathname: "where-is-hell",
+  title: "Where is hell?",
+  module: require("_bundle_loader")(require.resolve("./articles/where-is-hell.md"))
+}];
 /**
  * @param {{ children: React.ReactNode; }} props
  */
@@ -42971,7 +42975,9 @@ function (_React$Component) {
         });
       } else {
         var str = pathname.replace("/", "");
-        var stuff = markdown[str][1];
+        var stuff = markdown.find(function (obj) {
+          return obj.pathname === str;
+        }).module;
         stuff && stuff.then(function (markdown) {
           return _this2.setState(function () {
             return {
@@ -42986,13 +42992,13 @@ function (_React$Component) {
     value: function render() {
       return _react.default.createElement("main", {
         className: "main"
-      }, this.state.post === null ? articleTitles.map(function (title, i) {
+      }, this.state.post === null ? markdown.map(function (obj) {
         return _react.default.createElement("p", {
-          key: title
+          key: obj.title
         }, _react.default.createElement(_reactRouterDom.Link, {
           className: "title",
-          to: keyArray[i]
-        }, title));
+          to: obj.pathname
+        }, obj.title));
       }) : _react.default.createElement(Article, null, _react.default.createElement("article", null, _react.default.createElement(_withHtml.default, {
         source: this.state.post,
         escapeHtml: false,
@@ -43009,7 +43015,7 @@ function (_React$Component) {
 
 var _default = Home;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-markdown/with-html":"../node_modules/react-markdown/with-html.js","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","./articles/article.md":[["article.c3e7f48d.html","components/articles/article.md"],"components/articles/article.md"],"./articles/article.1.md":[["article.1.a17c37be.html","components/articles/article.1.md"],"components/articles/article.1.md"],"./articles/article.2.md":[["article.2.33dbc62e.html","components/articles/article.2.md"],"components/articles/article.2.md"]}],"components/Nav.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-markdown/with-html":"../node_modules/react-markdown/with-html.js","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","./articles/hello-world.md":[["hello-world.7636dda8.html","components/articles/hello-world.md"],"components/articles/hello-world.md"],"./articles/the-days-are-too-short.md":[["the-days-are-too-short.7446c4b5.html","components/articles/the-days-are-too-short.md"],"components/articles/the-days-are-too-short.md"],"./articles/where-is-hell.md":[["where-is-hell.9d20a2ae.html","components/articles/where-is-hell.md"],"components/articles/where-is-hell.md"]}],"components/Nav.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43114,7 +43120,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39049" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35193" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
