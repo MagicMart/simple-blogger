@@ -42882,7 +42882,29 @@ LazyPromise.prototype.catch = function (onError) {
   if (this.promise === null) this.promise = new Promise(this.executor);
   return this.promise.catch(onError);
 };
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/Home.js":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/articles/markdown.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var markdown = [{
+  pathname: "hello-world",
+  title: "Hello World",
+  module: require("_bundle_loader")(require.resolve("./hello-world.md"))
+}, {
+  pathname: "the-days-are-too-short",
+  title: "The days are too short",
+  module: require("_bundle_loader")(require.resolve("./the-days-are-too-short.md"))
+}, {
+  pathname: "where-is-hell",
+  title: "Where is hell?",
+  module: require("_bundle_loader")(require.resolve("./where-is-hell.md"))
+}];
+var _default = markdown;
+exports.default = _default;
+},{"_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","./hello-world.md":[["hello-world.7636dda8.html","components/articles/hello-world.md"],"components/articles/hello-world.md"],"./the-days-are-too-short.md":[["the-days-are-too-short.7446c4b5.html","components/articles/the-days-are-too-short.md"],"components/articles/the-days-are-too-short.md"],"./where-is-hell.md":[["where-is-hell.9d20a2ae.html","components/articles/where-is-hell.md"],"components/articles/where-is-hell.md"]}],"components/Home.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42895,6 +42917,8 @@ var _react = _interopRequireDefault(require("react"));
 var _reactRouterDom = require("react-router-dom");
 
 var _withHtml = _interopRequireDefault(require("react-markdown/with-html"));
+
+var _markdown = _interopRequireDefault(require("./articles/markdown"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42916,23 +42940,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var markdown = [{
-  pathname: "hello-world",
-  title: "Hello World",
-  module: require("_bundle_loader")(require.resolve("./articles/hello-world.md"))
-}, {
-  pathname: "the-days-are-too-short",
-  title: "The days are too short",
-  module: require("_bundle_loader")(require.resolve("./articles/the-days-are-too-short.md"))
-}, {
-  pathname: "where-is-hell",
-  title: "Where is hell?",
-  module: require("_bundle_loader")(require.resolve("./articles/where-is-hell.md"))
-}];
 /**
  * @param {{ children: React.ReactNode; }} props
  */
-
 function Article(props) {
   return _react.default.createElement(_react.default.Fragment, null, props.children);
 }
@@ -42975,9 +42985,11 @@ function (_React$Component) {
         });
       } else {
         var str = pathname.replace("/", "");
-        var stuff = markdown.find(function (obj) {
+
+        var stuff = _markdown.default.find(function (obj) {
           return obj.pathname === str;
         }).module;
+
         stuff && stuff.then(function (markdown) {
           return _this2.setState(function () {
             return {
@@ -42992,7 +43004,7 @@ function (_React$Component) {
     value: function render() {
       return _react.default.createElement("main", {
         className: "main"
-      }, this.state.post === null ? markdown.map(function (obj) {
+      }, this.state.post === null ? _markdown.default.map(function (obj) {
         return _react.default.createElement("p", {
           key: obj.title
         }, _react.default.createElement(_reactRouterDom.Link, {
@@ -43015,7 +43027,7 @@ function (_React$Component) {
 
 var _default = Home;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-markdown/with-html":"../node_modules/react-markdown/with-html.js","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","./articles/hello-world.md":[["hello-world.7636dda8.html","components/articles/hello-world.md"],"components/articles/hello-world.md"],"./articles/the-days-are-too-short.md":[["the-days-are-too-short.7446c4b5.html","components/articles/the-days-are-too-short.md"],"components/articles/the-days-are-too-short.md"],"./articles/where-is-hell.md":[["where-is-hell.9d20a2ae.html","components/articles/where-is-hell.md"],"components/articles/where-is-hell.md"]}],"components/Nav.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-markdown/with-html":"../node_modules/react-markdown/with-html.js","./articles/markdown":"components/articles/markdown.js"}],"components/Nav.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43120,7 +43132,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35193" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41325" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
