@@ -62,7 +62,10 @@ class Home extends React.Component {
                     markdown.map(obj => (
                         <p key={obj.title}>
                             <Link className="title" to={`/${obj.pathname}`}>
-                                {obj.title}
+                                {obj.title}{" "}
+                                <small>
+                                    <time className="date">{obj.date}</time>
+                                </small>
                             </Link>
                         </p>
                     ))
