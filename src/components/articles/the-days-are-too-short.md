@@ -2,4 +2,9 @@
 
 <time>2019-04-13</time>
 
-It is disconcerting how short the months seem now. Is there any mental magic by which they can be stretched? If my brain was energised, would there be finer grains of detail to hold me in the moment? Tomorrow I will be better, hold infinity in the palm of my hand.
+> <pre>To see a World in a Grain of Sand
+> And a Heaven in a Wild Flower
+> Hold Infinity in the palm of your hand
+> And Eternity in an hour<pre> - William Blake
+
+It is disconcerting how short the months seem now. Are there any mental exercises by which they can be stretched? If my brain was energised, would there be finer grains of detail to hold me in the moment? Tomorrow I will be better, hold infinity in the palm of my hand.
