@@ -5,13 +5,11 @@ import { NavLink } from "react-router-dom";
 function Nav() {
     return (
         <nav>
-            <ul className="row nav">
-                <li>
-                    <NavLink className="title" exact to="/">
-                        <h1>Simple Blogger</h1>
-                    </NavLink>
-                </li>
-            </ul>
+            <div>
+                <NavLink to="/">
+                    <h1 className="simple-blogger">Simple Blogger</h1>
+                </NavLink>
+            </div>
         </nav>
     );
 }

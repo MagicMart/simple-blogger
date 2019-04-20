@@ -11,7 +11,7 @@ function Users() {
 function App() {
     return (
         <Router>
-            <div>
+            <div className="container">
                 <Nav />
                 <Switch>
                     <Route path="/" component={Home} />

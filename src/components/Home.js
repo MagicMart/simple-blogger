@@ -57,18 +57,20 @@ class Home extends React.Component {
 
     render() {
         return (
-            <main className="main">
+            <main>
                 {this.state.post === null ? (
-                    markdown.map(obj => (
-                        <p key={obj.title}>
-                            <Link className="title" to={`/${obj.pathname}`}>
-                                {obj.title}{" "}
-                                <small>
-                                    <time className="date">{obj.date}</time>
-                                </small>
-                            </Link>
-                        </p>
-                    ))
+                    <ul>
+                        {markdown.map(obj => (
+                            <li key={obj.title}>
+                                <Link className="title" to={`/${obj.pathname}`}>
+                                    {obj.title}{" "}
+                                    <small>
+                                        <time className="date">{obj.date}</time>
+                                    </small>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
                 ) : (
                     <Article>
                         <article>
