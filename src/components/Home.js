@@ -19,6 +19,20 @@ class Home extends React.Component {
         };
     }
 
+    componentDidMount() {
+        const { pathname } = this.props.location;
+        if (pathname !== "/") {
+            const str = pathname.replace("/", "");
+            const stuff = markdown.find(obj => obj.pathname === str);
+            stuff &&
+                stuff.module.then(markdown =>
+                    this.setState(() => ({
+                        post: markdown
+                    }))
+                );
+        }
+    }
+
     /**
      * @param {{ location: { pathname: string; }; }} prevProp
      */
@@ -31,9 +45,9 @@ class Home extends React.Component {
             this.setState({ post: null });
         } else {
             const str = pathname.replace("/", "");
-            const stuff = markdown.find(obj => obj.pathname === str).module;
+            const stuff = markdown.find(obj => obj.pathname === str);
             stuff &&
-                stuff.then(markdown =>
+                stuff.module.then(markdown =>
                     this.setState(() => ({
                         post: markdown
                     }))
@@ -47,7 +61,7 @@ class Home extends React.Component {
                 {this.state.post === null ? (
                     markdown.map(obj => (
                         <p key={obj.title}>
-                            <Link className="title" to={obj.pathname}>
+                            <Link className="title" to={`/${obj.pathname}`}>
                                 {obj.title}
                             </Link>
                         </p>
