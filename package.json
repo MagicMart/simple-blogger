@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "keywords": [],
-    "author": "",
+    "author": "Martin Tudor",
     "license": "ISC",
     "scripts": {
         "clean": "rm dist/*",
