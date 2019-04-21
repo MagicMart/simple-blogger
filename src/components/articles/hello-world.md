@@ -3,3 +3,5 @@
 <time>2019-04-14</time>
 
 This is Simple Blogger speaking to the whole world.
+
+&copy; 2019 Martin Tudor
