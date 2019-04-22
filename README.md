@@ -1,6 +1,5 @@
-# empty-project-babel-css-react
+# Simple Blogger
 
-Empty project.
 
 ## Building and running on localhost
 
