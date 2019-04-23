@@ -1,4 +1,4 @@
-## The weeks are too short
+## The days are too short
 
 <time>2019-04-13</time>
 
@@ -9,6 +9,6 @@
 >
 > -   William Blake
 
-It is disconcerting how short the weeks seem now. Are there any mental exercises by which they can be stretched? If my brain was energised, would there be finer grains of detail to hold me longer in the moment? Tomorrow I will be stronger, hold infinity in the palm of my hand.
+It is disconcerting how short the days appear now. Life shouldn't be like looking down the wrong way of a telescope. If my brain was revitalised, would there be finer grains of detail to hold me longer in the moment? Tomorrow I will be stronger, hold infinity in the palm of my hand.
 
 &copy; 2019 Martin Tudor
