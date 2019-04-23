@@ -42,3 +42,9 @@ a {
 time {
     text-decoration: underline overline;
 }
+
+@media screen and (max-width: 500px) {
+    ul {
+        padding-left: 0;
+    }
+}

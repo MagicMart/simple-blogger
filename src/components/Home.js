@@ -67,12 +67,12 @@ class Home extends React.Component {
                                         className="title"
                                         to={`/${obj.pathname}`}
                                     >
-                                        {obj.title}{" "}
                                         <small>
                                             <time className="date">
                                                 {obj.date}
                                             </time>
-                                        </small>
+                                        </small>{" "}
+                                        {obj.title}
                                     </Link>
                                 </li>
                             ))}
