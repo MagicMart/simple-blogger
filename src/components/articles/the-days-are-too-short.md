@@ -9,6 +9,6 @@
 >
 > -   William Blake
 
-It is alarming how short the days appear now. Life shouldn't be like looking down the wrong way of a telescope. If my brain was revitalised, would there be finer grains of detail to hold me longer in the moment? Tomorrow I will be stronger, hold infinity in the palm of my hand.
+It is alarming how short the days appear now. Life shouldn't be like looking down the wrong end of a telescope. If my brain was revitalised, would there be finer grains of detail to hold me longer in the moment? Tomorrow I will be stronger, hold infinity in the palm of my hand.
 
 &copy; 2019 Martin Tudor
