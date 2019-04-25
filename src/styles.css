@@ -24,16 +24,12 @@ body {
 }
 
 ul {
-    list-style-type: square;
+    list-style-type: none;
     color: #ffeb3b;
 }
 
-li {
-    height: 48px;
-    padding: 10px;
-}
-
 .simple-blogger {
+    padding: 5px;
     background-color: black;
     color: #e77619;
 }
@@ -42,6 +38,10 @@ a {
     text-decoration-line: none;
     color: #ffeb3b;
     cursor: pointer;
+}
+
+.link {
+    padding: 11px;
 }
 
 time {

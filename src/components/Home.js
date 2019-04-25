@@ -62,20 +62,22 @@ class Home extends React.Component {
                     <>
                         <ul>
                             {markdown.map(obj => (
-                                <Link
-                                    className="title"
-                                    to={`/${obj.pathname}`}
-                                    key={obj.title}
-                                >
-                                    <li>
-                                        <small>
-                                            <time className="date">
-                                                {obj.date}
-                                            </time>
-                                        </small>{" "}
-                                        {obj.title}
-                                    </li>
-                                </Link>
+                                <li key={obj.title}>
+                                    <Link
+                                        className="title"
+                                        to={`/${obj.pathname}`}
+                                    >
+                                        <div className="link">
+                                            {" "}
+                                            <small>
+                                                <time className="date">
+                                                    {obj.date}
+                                                </time>
+                                            </small>{" "}
+                                            {obj.title}
+                                        </div>
+                                    </Link>
+                                </li>
                             ))}
                         </ul>
                         <footer>
