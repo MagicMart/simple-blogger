@@ -60,26 +60,25 @@ class Home extends React.Component {
             <main>
                 {this.state.post === null ? (
                     <>
-                        <ul>
+                        <nav>
                             {markdown.map(obj => (
-                                <li key={obj.title}>
-                                    <Link
-                                        className="title"
-                                        to={`/${obj.pathname}`}
-                                    >
-                                        <div className="link">
-                                            {" "}
-                                            <small>
-                                                <time className="date">
-                                                    {obj.date}
-                                                </time>
-                                            </small>{" "}
-                                            {obj.title}
-                                        </div>
-                                    </Link>
-                                </li>
+                                <Link
+                                    className="title"
+                                    to={`/${obj.pathname}`}
+                                    key={obj.title}
+                                >
+                                    <div className="link">
+                                        {" "}
+                                        <small>
+                                            <time className="date">
+                                                {obj.date}
+                                            </time>
+                                        </small>{" "}
+                                        {obj.title}
+                                    </div>
+                                </Link>
                             ))}
-                        </ul>
+                        </nav>
                         <footer>
                             <p>© 2019 Martin Tudor</p>
                         </footer>
