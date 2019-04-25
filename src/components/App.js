@@ -1,11 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Nav from "./Nav";
-
-function Users() {
-    return <h2>Users</h2>;
-}
 
 function App() {
     return (
