@@ -23,11 +23,6 @@ body {
     margin: 0 auto;
 }
 
-ul {
-    list-style-type: none;
-    color: #ffeb3b;
-}
-
 .simple-blogger {
     padding: 5px;
     background-color: black;
