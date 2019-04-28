@@ -39,6 +39,10 @@ a {
     padding: 11px;
 }
 
+blockquote {
+    color: rgb(255, 255, 0);
+}
+
 time {
     text-decoration: underline overline;
 }
