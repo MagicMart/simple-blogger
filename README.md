@@ -1,6 +1,5 @@
 # Simple Blogger
 
-
 ## Building and running on localhost
 
 First install dependencies:
@@ -18,14 +17,28 @@ npm start
 To create a production build:
 
 ```sh
-npm run build-prod
+npm run build
 ```
 
-## Running
+## How to use
 
-Open the file `dist/index.html` in your browser
+-   Create a markdown file in the **articles** folder.
+-   Write your blog (in markdown).
+-   Add an object (see below, for details) to the markdown variable in markdown.js file.
 
-## Credits
+The object for your new blog post should have 4 properties: pathname, title, date, and module like this:
 
-Created with [createapp.dev - an online tool for creating webpack and parcel projects](https://createapp.dev/)
+```javascript
+{
+    pathname: "hello-world",
+    title: "Hello World",
+    date: "2019-04-14",
+    module: import("./hello-world.md")
+},
+```
 
+## Thanks
+
+Created with the help of [createapp.dev - an online tool for creating webpack and parcel projects](https://createapp.dev/)
+
+I found the above website useful - although I did change a few things.
