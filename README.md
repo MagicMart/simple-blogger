@@ -41,4 +41,3 @@ The object for your new blog post should have 4 properties: pathname, title, dat
 
 Created with the help of [createapp.dev - an online tool for creating webpack and parcel projects](https://createapp.dev/)
 
-I found the above website useful - although I did change a few things.
