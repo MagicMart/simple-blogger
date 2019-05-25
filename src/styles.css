@@ -44,7 +44,8 @@ blockquote {
 }
 
 time {
-    text-decoration: underline overline;
+    border: 1px solid white;
+    padding: 2px;
 }
 
 @media screen and (max-width: 500px) {
