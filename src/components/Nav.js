@@ -5,7 +5,7 @@ function Nav() {
     return (
         <nav>
             <Link to="/">
-                <h1 className="simple-blogger">Simple Blogger</h1>
+                <h1 className="simple-blogger">{"<"}Simple Blogger</h1>
             </Link>
         </nav>
     );
