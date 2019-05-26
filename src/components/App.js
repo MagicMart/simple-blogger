@@ -7,7 +7,6 @@ function App() {
     return (
         <Router>
             <div className="container">
-                <Nav />
                 <Switch>
                     <Route path="/" component={Home} />
                     <Route render={() => <h1>Page not Found</h1>} />

@@ -1,7 +1,8 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
+import {Route, Link} from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 
+import Nav from "./Nav";
 import markdown from "./articles/markdown";
 
 /**
@@ -20,7 +21,7 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        const { pathname } = this.props.location;
+        const {pathname} = this.props.location;
         if (pathname !== "/") {
             const str = pathname.replace("/", "");
             const stuff = markdown.find(obj => obj.pathname === str);
@@ -37,12 +38,12 @@ class Home extends React.Component {
      * @param {{ location: { pathname: string; }; }} prevProp
      */
     componentDidUpdate(prevProp) {
-        const { pathname } = this.props.location;
+        const {pathname} = this.props.location;
         if (prevProp.location.pathname === pathname) {
             return;
         }
         if (pathname === "/") {
-            this.setState({ post: null });
+            this.setState({post: null});
         } else {
             const str = pathname.replace("/", "");
             const stuff = markdown.find(obj => obj.pathname === str);
@@ -58,6 +59,7 @@ class Home extends React.Component {
     render() {
         return (
             <main>
+                <Nav {...this.props} />
                 {this.state.post === null ? (
                     <>
                         <nav>
