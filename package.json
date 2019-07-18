@@ -7,9 +7,9 @@
     "author": "Martin Tudor",
     "license": "ISC",
     "scripts": {
-        "clean": "rm dist/*.map",
+        "clean": "rm dist/*",
         "start": "parcel src/index.html",
-        "build": "parcel build src/index.html; rm dist/*.map"
+        "build": "parcel build src/index.html --no-source-maps --experimental-scope-hoisting"
     },
     "dependencies": {
         "react": "^16.8.6",
