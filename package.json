@@ -9,7 +9,7 @@
     "scripts": {
         "clean": "rm dist/*",
         "start": "parcel src/index.html",
-        "build": "parcel build src/index.html --no-source-maps --experimental-scope-hoisting"
+        "build": "parcel build src/index.html --no-source-maps --experimental-scope-hoisting; cp _redirects dist/_redirects"
     },
     "dependencies": {
         "react": "^16.8.6",
