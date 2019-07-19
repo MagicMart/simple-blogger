@@ -9,7 +9,6 @@
     "scripts": {
         "clean": "rm dist/*",
         "start": "parcel src/index.html",
-        "prebuild": "npm run clean",
         "build": "parcel build src/index.html --no-source-maps --experimental-scope-hoisting",
         "postbuild": "cp _redirects dist/_redirects"
     },
