@@ -30,7 +30,7 @@ body {
 }
 
 a {
-    text-decoration-line: none;
+    text-decoration: none;
     color: #ffeb3b;
     cursor: pointer;
 }
