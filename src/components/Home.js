@@ -13,13 +13,9 @@ function Article(props) {
 }
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            post: null
-        };
-    }
-
+    state = {
+        post: null
+    };
     componentDidMount() {
         const {pathname} = this.props.location;
         if (pathname !== "/") {
