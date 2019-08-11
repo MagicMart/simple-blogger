@@ -1,3 +1,5 @@
+// @flow
+
 import React from "react";
 import {Route, Link} from "react-router-dom";
 import ReactMarkdown from "react-markdown";
@@ -12,7 +14,16 @@ function Article(props) {
     return <>{props.children}</>;
 }
 
-class Home extends React.Component {
+type Props = {
+    props: Object,
+    location: Object
+};
+
+type State = {
+    post: ?string
+};
+
+class Home extends React.Component<Props, State> {
     state = {
         post: null
     };
@@ -33,7 +44,7 @@ class Home extends React.Component {
     /**
      * @param {{ location: { pathname: string; }; }} prevProp
      */
-    componentDidUpdate(prevProp) {
+    componentDidUpdate(prevProp: Object) {
         const {pathname} = this.props.location;
         if (prevProp.location.pathname === pathname) {
             return;
