@@ -7,9 +7,6 @@ import ReactMarkdown from "react-markdown";
 import Nav from "./Nav";
 import markdown from "./articles/markdown";
 
-/**
- * @param {{ children: React.ReactNode; }} props
- */
 function Article(props) {
     return <>{props.children}</>;
 }
@@ -19,94 +16,61 @@ type Props = {
     location: Object
 };
 
-type State = {
-    post: ?string
-};
+function Home(props: Props) {
+    const [post, setPost] = React.useState<?string>(null);
 
-class Home extends React.Component<Props, State> {
-    state = {
-        post: null
-    };
-    componentDidMount() {
-        const {pathname} = this.props.location;
-        if (pathname !== "/") {
-            const str = pathname.replace("/", "");
-            const stuff = markdown.find(obj => obj.pathname === str);
-            stuff &&
-                stuff.module.then(markdown =>
-                    this.setState(() => ({
-                        post: markdown
-                    }))
-                );
-        }
-    }
+    React.useEffect(() => {
+        const {pathname} = props.location;
 
-    /**
-     * @param {{ location: { pathname: string; }; }} prevProp
-     */
-    componentDidUpdate(prevProp: Object) {
-        const {pathname} = this.props.location;
-        if (prevProp.location.pathname === pathname) {
-            return;
-        }
         if (pathname === "/") {
-            this.setState({post: null});
+            setPost(null);
         } else {
             const str = pathname.replace("/", "");
             const stuff = markdown.find(obj => obj.pathname === str);
-            stuff &&
-                stuff.module.then(markdown =>
-                    this.setState(() => ({
-                        post: markdown
-                    }))
-                );
+            stuff && stuff.module.then(markdown => setPost(markdown));
         }
-    }
+    }, [props.location.pathname]);
 
-    render() {
-        return (
-            <main>
-                <Nav {...this.props} />
-                {this.state.post === null ? (
-                    <>
-                        <nav>
-                            {markdown.map(obj => (
-                                <Link
-                                    className="title"
-                                    to={`/${obj.pathname}`}
-                                    key={obj.title}
-                                >
-                                    <div className="link">
-                                        {" "}
-                                        <small>
-                                            <time className="date">
-                                                {obj.date}
-                                            </time>
-                                        </small>{" "}
-                                        {obj.title}
-                                    </div>
-                                </Link>
-                            ))}
-                        </nav>
-                        <footer>
-                            <p>© 2019 Martin Tudor</p>
-                        </footer>
-                    </>
-                ) : (
-                    <Article>
-                        <article>
-                            <ReactMarkdown
-                                source={this.state.post}
-                                escapeHtml={false}
-                                className="markdown"
-                            />
-                        </article>
-                    </Article>
-                )}
-                <Route path="/:id" component={Article} />
-            </main>
-        );
-    }
+    return (
+        <main>
+            <Nav {...props} />
+            {post === null ? (
+                <>
+                    <nav>
+                        {markdown.map(obj => (
+                            <Link
+                                className="title"
+                                to={`/${obj.pathname}`}
+                                key={obj.title}
+                            >
+                                <div className="link">
+                                    {" "}
+                                    <small>
+                                        <time className="date">{obj.date}</time>
+                                    </small>{" "}
+                                    {obj.title}
+                                </div>
+                            </Link>
+                        ))}
+                    </nav>
+                    <footer>
+                        <p>© 2019 Martin Tudor</p>
+                    </footer>
+                </>
+            ) : (
+                <Article>
+                    <article>
+                        <ReactMarkdown
+                            source={post}
+                            escapeHtml={false}
+                            className="markdown"
+                        />
+                    </article>
+                </Article>
+            )}
+            <Route path="/:id" component={Article} />
+        </main>
+    );
 }
 
 export default Home;
