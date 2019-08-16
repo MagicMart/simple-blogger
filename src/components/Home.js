@@ -7,10 +7,6 @@ import ReactMarkdown from "react-markdown";
 import Nav from "./Nav";
 import markdown from "./articles/markdown";
 
-function Article(props) {
-    return <>{props.children}</>;
-}
-
 type Props = {
     props: Object,
     location: Object
@@ -58,17 +54,14 @@ function Home(props: Props) {
                     </footer>
                 </>
             ) : (
-                <Article>
-                    <article>
-                        <ReactMarkdown
-                            source={post}
-                            escapeHtml={false}
-                            className="markdown"
-                        />
-                    </article>
-                </Article>
+                <article>
+                    <ReactMarkdown
+                        source={post}
+                        escapeHtml={false}
+                        className="markdown"
+                    />
+                </article>
             )}
-            <Route path="/:id" component={Article} />
         </main>
     );
 }
