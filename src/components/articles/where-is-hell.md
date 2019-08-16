@@ -7,6 +7,6 @@
 >
 > -   Satan, John Milton's Paradise Lost
 
-Hell is where the mind is. Sometimes escaping from your own thoughts is a great battle. The way to win is through mental hygiene. Hell abhors a clean room. So buy my new book.
+If you turn the world upside down, you can swim like an hero in Hell. Don't try to escape. Keep your mind above the muck.
 
 &copy; 2019 Martin Tudor
