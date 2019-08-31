@@ -28,41 +28,45 @@ function Home(props: Props) {
     }, [props.location.pathname]);
 
     return (
-        <main>
+        <React.Fragment>
             <Nav {...props} />
-            {post === null ? (
-                <>
-                    <nav>
-                        {markdown.map(obj => (
-                            <Link
-                                className="title"
-                                to={`/${obj.pathname}`}
-                                key={obj.title}
-                            >
-                                <div className="link">
-                                    {" "}
-                                    <small>
-                                        <time className="date">{obj.date}</time>
-                                    </small>{" "}
-                                    {obj.title}
-                                </div>
-                            </Link>
-                        ))}
-                    </nav>
-                    <footer>
-                        <p>© 2019 Martin Tudor</p>
-                    </footer>
-                </>
-            ) : (
-                <article>
-                    <ReactMarkdown
-                        source={post}
-                        escapeHtml={false}
-                        className="markdown"
-                    />
-                </article>
-            )}
-        </main>
+            <main>
+                {post === null ? (
+                    <>
+                        <nav>
+                            {markdown.map(obj => (
+                                <Link
+                                    className="title"
+                                    to={`/${obj.pathname}`}
+                                    key={obj.title}
+                                >
+                                    <div className="link">
+                                        {" "}
+                                        <small>
+                                            <time className="date">
+                                                {obj.date}
+                                            </time>
+                                        </small>{" "}
+                                        {obj.title}
+                                    </div>
+                                </Link>
+                            ))}
+                        </nav>
+                        <footer>
+                            <p>© 2019 Martin Tudor</p>
+                        </footer>
+                    </>
+                ) : (
+                    <article>
+                        <ReactMarkdown
+                            source={post}
+                            escapeHtml={false}
+                            className="markdown"
+                        />
+                    </article>
+                )}
+            </main>
+        </React.Fragment>
     );
 }
 
