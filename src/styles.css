@@ -35,6 +35,11 @@ a {
     cursor: pointer;
 }
 
+a:hover,
+a:focus {
+    color: #f5f5f5;
+}
+
 .link {
     padding: 11px;
 }
