@@ -7,6 +7,6 @@
 >
 > -   Satan, John Milton's Paradise Lost
 
-If you turn the world upside down, you can swim like an hero in Hell. Don't try to escape. Keep your mind above the muck.
+Watch the world.
 
 &copy; 2019 Martin Tudor
