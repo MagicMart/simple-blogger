@@ -1,5 +1,11 @@
 const markdown = [
     {
+        pathname: "a-day-out",
+        title: "A Day Out",
+        date: "2019-11-13",
+        module: import("./a-day-out.md")
+    },
+    {
         pathname: "hello-world",
         title: "Hello World",
         date: "2019-04-14",
